@@ -1,0 +1,12 @@
+FROM node:alpine
+
+WORKDIR /app
+#RUN chown -R arwansubekti:arwansubekti /app
+#USER arwansubekti
+
+COPY package.json .
+RUN npm install
+
+COPY . .
+
+CMD ["npm","run","start"]
